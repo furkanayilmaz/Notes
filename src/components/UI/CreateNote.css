@@ -1,0 +1,83 @@
+/* https://www.w3schools.com/css/css3_borders.asp */
+/* https://fonts.google.com/specimen/Dosis  --> Font Name: Semi-bold 600*/
+/* https://stackoverflow.com/questions/8083430/how-to-change-the-font-and-font-size-of-an-html-input-tag */
+/* https://www.jotform.com/answers/746573-changing-the-font-of-the-input-fields */
+/* w3schools.com/cssref/sel_hover.asp */
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap');
+
+body{
+    background-color: lightcoral;
+}
+
+#fields {
+    /* margin: auto; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 50%;
+    
+    padding: 10px;
+    
+    
+}
+
+#inputField{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+
+    /* Rounded Corners */ 
+    border-radius: 25px;
+    padding: 20px;
+
+    /* Font Family */
+    font-family: 'Dosis', sans-serif;
+    font-size: 24px;
+}
+
+#buttonAdd{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+
+    border-radius: 25px;
+    padding: 20px;
+
+    font-family: 'Dosis', sans-serif;
+    font-size: 24px;
+}
+
+
+#buttonAdd:hover{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #000;
+
+    border-radius: 25px;
+    border: 2px solid #fff;
+    padding: 20px;
+
+    font-family: 'Dosis', sans-serif;
+    font-size: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+
+    #buttonAdd:hover{
+        border: 1px solid;
+        padding: 10px;
+        box-shadow: 5px 10px gold;
+
+        border-radius: 25px;
+        border: 2px solid #fff;
+        padding: 20px;
+
+        font-family: 'Dosis', sans-serif;
+        font-size: 24px;
+    }
+}

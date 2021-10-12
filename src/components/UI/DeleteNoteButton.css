@@ -1,0 +1,47 @@
+/* https://www.w3schools.com/css/css3_borders.asp */
+/* https://fonts.google.com/specimen/Dosis  --> Font Name: Semi-bold 600*/
+/* https://w3schools.com/cssref/sel_hover.asp */
+
+
+
+#buttonClear{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+
+    border-radius: 25px;
+    padding: 20px;
+
+    font-family: 'Dosis', sans-serif;
+    font-size: 24px;
+}
+
+
+#buttonClear:hover{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #000;
+
+    border-radius: 25px;
+    border: 2px solid #fff;
+    padding: 20px;
+
+    font-family: 'Dosis', sans-serif;
+    font-size: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    #buttonClear:hover{
+        border: 1px solid;
+        padding: 10px;
+        box-shadow: 5px 10px gold;
+
+        border-radius: 25px;
+        border: 2px solid #fff;
+        padding: 20px;
+
+        font-family: 'Dosis', sans-serif;
+        font-size: 24px;
+    }
+}

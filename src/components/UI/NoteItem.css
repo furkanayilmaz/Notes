@@ -1,0 +1,33 @@
+/* https://fonts.google.com/specimen/Yanone+Kaffeesatz --> Bold 700*/ 
+/* https://www.w3schools.com/cssref/css3_pr_text-shadow.asp */
+/* https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_box-shadow */
+/* https://www.w3schools.com/css/css3_borders.asp */
+/* https://fonts.google.com/specimen/Dosis  --> Font Name: Semi-bold 600*/
+/* https://stackoverflow.com/questions/8083430/how-to-change-the-font-and-font-size-of-an-html-input-tag */
+/* https://www.jotform.com/answers/746573-changing-the-font-of-the-input-fields */
+/* https://w3schools.com/cssref/sel_hover.asp */
+
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap');
+#wrapper-noteitem{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 50%;
+}
+
+#noteItem{
+    color: gold;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 50px;
+    text-shadow: 2px 2px blue;
+}
+
+@media only screen and (max-width: 600px){
+    #noteItem{
+        color: black;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 50px;
+        text-shadow: 2px 2px gold;
+    }
+}
