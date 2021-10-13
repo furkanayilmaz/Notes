@@ -1,9 +1,23 @@
 // React Spinners Library -> https://www.npmjs.com/package/react-spinners
+// React CSS Library -> https://www.npmjs.com/package/@emotion/react
+// https://www.telerik.com/blogs/how-to-show-and-hide-elements-in-react
+// https://cogoport.github.io/cogo-toast/
+
 import React, { useState, useEffect } from "react";
 import CreateNote from "./components/CreateNote";
 import NoteList from "./components/NoteList";
 import BarLoader from 'react-spinners/BarLoader'
-import '../src/components/UI/LoaderSpinner.css'
+import { css } from '@emotion/react'
+import cogoToast from "cogo-toast";
+
+const override = css`
+  display: flex;
+  margin: 0 auto;
+  border-color: #ffffff;
+  width: 250px;
+  height: 10px;
+`;
+
 
 const App = () => {
   const [notes, setNotes] = useState([], () => {
@@ -11,15 +25,20 @@ const App = () => {
     return localData ? JSON.parse(localData) : [];
   });
 
-  const [loading, setLoading] = useState(false);
+  let [loading, setLoading] = useState(false);
+  let [color, setColor] = useState("#524297")
+  let [text, setText] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false)
-    }, 8000)
+    setText(true)
+    setTimeout(() =>{
+      setLoading(false);
+      setText(false)
+    }, 1500);
   }, [])
-  
+
+
 
   const addNoteHandler = (notes) => {
     // <--- Arrow Function
@@ -34,7 +53,9 @@ const App = () => {
   useEffect(() => {
     const n = JSON.parse(localStorage.getItem("notes"));
     if(n == null){
-      alert("No Notes Found!")
+      //alert("No Notes Found!")
+      cogoToast.warn("No Notes Found!", { position: 'top-right', heading: 'Information' });
+
       return;
     }
     setNotes(n);
@@ -43,7 +64,6 @@ const App = () => {
   const printAmountOfNotes = () => {
     for(let i = 0; i < notes.length; i++){
       console.log(i)
-      
     }
   }
 
@@ -62,21 +82,35 @@ const App = () => {
     }
   }
 
+  const onErrorNote = () => {
+    cogoToast.error("Enter Note!", { position: 'top-right', heading: 'Error!' });
+  }
+
+  const onSuccessNote = () => {
+    cogoToast.success("Success!", { position: 'top-right', heading: 'Success!' });
+  }
+
   return (
     <div className="App">
+      <div>
+        <h2 style={{
+          textAlign: 'center',
+          fontSize: 50,
+          color: 'gold',
+          display: text ? "block" : "none"
+        }}>Loading...</h2>
+      </div>
       {
         loading ? 
 
-        <BarLoader
-        size={1500}
-        color={"#0DAEFF"}
-        loading={loading}
-        />
+        <BarLoader color={color} loading={loading} css={override} speedMultiplier={1.5} size={999} />
+
+        
 
         :
 
         <div>
-          <CreateNote onNoteAdd={addNoteHandler} clearNotes={clearEnteredNotes}/>
+          <CreateNote onNoteAdd={addNoteHandler} clearNotes={clearEnteredNotes} onErrorNote={onErrorNote} onSuccessNote={onSuccessNote}/>
           <NoteList data={notes} handleDelete={handleDelete} />
         </div>
       }

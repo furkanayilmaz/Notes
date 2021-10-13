@@ -18,12 +18,13 @@ const CreateNote = (props) => {
 		};
 
 		if(input === ""){
-			alert("Please Enter A Note!")
+			props.onErrorNote();
 			return;
 		}
 
 		if(input !== ""){
-			alert("Note Is Saved Successfully!")
+			props.onSuccessNote();
+			return;
 		}
 
 		props.onNoteAdd(noteData);
