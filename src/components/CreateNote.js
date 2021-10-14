@@ -19,13 +19,11 @@ const CreateNote = (props) => {
 
 		if(input === ""){
 			props.onErrorNote();
-			return;
 		}
 
-		if(input !== ""){
-			props.onSuccessNote();
-			return;
-		}
+		if (input !== "") {
+			props.onSuccessNote(); 
+		  }
 
 		props.onNoteAdd(noteData);
 		setNote('');
