@@ -2,6 +2,7 @@
 // React CSS Library -> https://www.npmjs.com/package/@emotion/react
 // https://www.telerik.com/blogs/how-to-show-and-hide-elements-in-react
 // https://cogoport.github.io/cogo-toast/
+// https://github.com/oliviertassinari/react-swipeable-views
 
 import React, { useState, useEffect } from "react";
 import CreateNote from "./components/CreateNote";
@@ -17,7 +18,6 @@ const override = css`
   width: 250px;
   height: 10px;
 `;
-
 
 const App = () => {
   const [notes, setNotes] = useState([], () => {
