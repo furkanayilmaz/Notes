@@ -1,6 +1,11 @@
+// https://www.npmjs.com/package/uniqid
+
 import React, { useState } from 'react';
 import './UI/CreateNote.css';
 import './UI/DeleteNoteButton.css';
+import uniqid from 'uniqid';
+
+
 const CreateNote = (props) => {
 	const [input, setNote] = useState(''); // <- Array Destructuring
 
@@ -13,7 +18,7 @@ const CreateNote = (props) => {
 		event.preventDefault();
 
 		const noteData = {
-			id: Math.random().toString(), // Generating a random ID for every item <- Warning: Might generate the same number again.
+			id: uniqid(), // Generating a random ID for every item <- Warning: Might generate the same number again.
 			title: input,
 		};
 
